@@ -16,6 +16,7 @@
 		F976B0C42270C10E005903B5 /* AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F976B0C32270C10E005903B5 /* AR.swift */; };
 		F976B0C62270C126005903B5 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = F976B0C52270C126005903B5 /* Help.swift */; };
 		F976B0C82270C68B005903B5 /* InteractiveMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F976B0C72270C68B005903B5 /* InteractiveMap.swift */; };
+		F976B0CA2270C8F0005903B5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F976B0C92270C8F0005903B5 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F976B0C32270C10E005903B5 /* AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR.swift; sourceTree = "<group>"; };
 		F976B0C52270C126005903B5 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
 		F976B0C72270C68B005903B5 /* InteractiveMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveMap.swift; sourceTree = "<group>"; };
+		F976B0C92270C8F0005903B5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +48,8 @@
 		F976B0A122705B46005903B5 = {
 			isa = PBXGroup;
 			children = (
-				F976B0AC22705B46005903B5 /* NavSBtemplate */,
+				F976B0C92270C8F0005903B5 /* Default-568h@2x.png */,
+				F976B0AC22705B46005903B5 /* Volantes2 */,
 				F976B0AB22705B46005903B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,7 +62,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F976B0AC22705B46005903B5 /* NavSBtemplate */ = {
+		F976B0AC22705B46005903B5 /* Volantes2 */ = {
 			isa = PBXGroup;
 			children = (
 				F976B0AD22705B47005903B5 /* AppDelegate.swift */,
@@ -73,7 +76,7 @@
 				F976B0C52270C126005903B5 /* Help.swift */,
 				F976B0C72270C68B005903B5 /* InteractiveMap.swift */,
 			);
-			path = NavSBtemplate;
+			path = Volantes2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F976B0B822705B48005903B5 /* LaunchScreen.storyboard in Resources */,
+				F976B0CA2270C8F0005903B5 /* Default-568h@2x.png in Resources */,
 				F976B0B522705B48005903B5 /* Assets.xcassets in Resources */,
 				F976B0B322705B47005903B5 /* Main.storyboard in Resources */,
 			);
@@ -305,7 +309,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ben.Volantes2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ben.NavSBtemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,7 +327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ben.Volantes2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ben.NavSBtemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
