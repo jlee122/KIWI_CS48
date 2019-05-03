@@ -7,27 +7,21 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class InteractiveMap: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
-    @IBAction func GoBack(_ sender: UIButton) {
+    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBAction func goBack(_ sender: UIButton) {
         performSegue(withIdentifier: "mapback", sender: self)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    */
-
 }
+    
+
+
