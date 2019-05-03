@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--Help-->
         <scene sceneID="Lz4-TP-SZZ">
             <objects>
-                <viewController id="f18-LL-v28" customClass="Help" customModule="Volantes2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="f18-LL-v28" customClass="Help" customModule="NavSBtemplate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vcV-0b-XrL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,7 @@
         <!--About Us-->
         <scene sceneID="bmp-uh-Puh">
             <objects>
-                <viewController id="kmd-WX-6Hi" customClass="AboutUs" customModule="Volantes2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kmd-WX-6Hi" customClass="AboutUs" customModule="NavSBtemplate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sWD-hR-z10">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +89,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Volantes2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NavSBtemplate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,19 +202,19 @@
         <!--AR-->
         <scene sceneID="cvP-L0-9n3">
             <objects>
-                <viewController id="9X1-aq-wdd" customClass="AR" customModule="Volantes2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9X1-aq-wdd" customClass="AR" customModule="NavSBtemplate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Qs-dN-jTC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Augmented Reality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b06-8c-fcM">
-                                <rect key="frame" x="65.5" y="315.5" width="244" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="slo-PA-h6w">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k11-gh-xTb">
-                                <rect key="frame" x="133" y="371.5" width="109" height="48"/>
+                                <rect key="frame" x="20" y="567" width="335" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Wi7-Ll-xey"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Go Back"/>
                                 <connections>
@@ -222,25 +222,51 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="arback" id="v45-iZ-I1H"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co6-Qe-Pzw" userLabel="Add Node">
+                                <rect key="frame" x="0.0" y="507" width="375" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="qJ0-jZ-te4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Add Node"/>
+                                <connections>
+                                    <action selector="addNode:" destination="9X1-aq-wdd" eventType="touchUpInside" id="PyG-kC-8os"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="b06-8c-fcM" firstAttribute="centerY" secondItem="9Qs-dN-jTC" secondAttribute="centerY" id="7hY-mp-1sT"/>
-                            <constraint firstItem="b06-8c-fcM" firstAttribute="centerX" secondItem="9Qs-dN-jTC" secondAttribute="centerX" id="A9d-VH-I6W"/>
-                            <constraint firstItem="k11-gh-xTb" firstAttribute="top" secondItem="b06-8c-fcM" secondAttribute="bottom" constant="20" id="czS-0E-Np4"/>
+                            <constraint firstItem="co6-Qe-Pzw" firstAttribute="leading" secondItem="uQc-Xn-PNh" secondAttribute="leading" id="42U-2j-XBg"/>
+                            <constraint firstItem="slo-PA-h6w" firstAttribute="top" secondItem="9Qs-dN-jTC" secondAttribute="top" id="9d0-2X-olv"/>
+                            <constraint firstItem="slo-PA-h6w" firstAttribute="trailing" secondItem="uQc-Xn-PNh" secondAttribute="trailing" id="J5h-qx-Esg"/>
+                            <constraint firstAttribute="bottom" secondItem="slo-PA-h6w" secondAttribute="bottom" id="JDp-t5-D1R"/>
+                            <constraint firstItem="uQc-Xn-PNh" firstAttribute="bottom" secondItem="co6-Qe-Pzw" secondAttribute="bottom" constant="100" id="KVh-Pl-YTS"/>
+                            <constraint firstItem="uQc-Xn-PNh" firstAttribute="bottom" secondItem="k11-gh-xTb" secondAttribute="bottom" constant="20" id="OKv-Ez-5mk"/>
+                            <constraint firstItem="uQc-Xn-PNh" firstAttribute="bottom" secondItem="co6-Qe-Pzw" secondAttribute="bottom" constant="120" id="RIC-xT-xsA"/>
+                            <constraint firstItem="uQc-Xn-PNh" firstAttribute="bottom" secondItem="co6-Qe-Pzw" secondAttribute="bottom" constant="100" id="XoE-d2-LQr"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="co6-Qe-Pzw" secondAttribute="bottom" constant="80" id="Xu6-mK-2kd"/>
+                            <constraint firstAttribute="trailing" secondItem="slo-PA-h6w" secondAttribute="trailing" id="YAr-Ob-Lg6"/>
+                            <constraint firstItem="uQc-Xn-PNh" firstAttribute="trailing" secondItem="slo-PA-h6w" secondAttribute="trailing" id="hBM-BM-2SQ"/>
+                            <constraint firstItem="slo-PA-h6w" firstAttribute="leading" secondItem="uQc-Xn-PNh" secondAttribute="leading" id="pqd-cg-RZx"/>
+                            <constraint firstItem="uQc-Xn-PNh" firstAttribute="trailing" secondItem="co6-Qe-Pzw" secondAttribute="trailing" id="r27-0Z-sCG"/>
+                            <constraint firstItem="slo-PA-h6w" firstAttribute="leading" secondItem="9Qs-dN-jTC" secondAttribute="leading" id="vin-nF-EEJ"/>
                             <constraint firstItem="k11-gh-xTb" firstAttribute="centerX" secondItem="9Qs-dN-jTC" secondAttribute="centerX" id="wBc-7N-cFQ"/>
+                            <constraint firstItem="k11-gh-xTb" firstAttribute="leading" secondItem="uQc-Xn-PNh" secondAttribute="leading" constant="20" id="wNM-Li-YD2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uQc-Xn-PNh"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="slo-PA-h6w" id="pb8-Af-snK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05i-kF-ryp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="779"/>
+            <point key="canvasLocation" x="672.79999999999995" y="778.56071964017997"/>
         </scene>
         <!--Interactive Map-->
         <scene sceneID="rCc-ya-8Fw">
             <objects>
-                <viewController id="GD8-JA-jGl" customClass="InteractiveMap" customModule="Volantes2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GD8-JA-jGl" customClass="InteractiveMap" customModule="NavSBtemplate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iwC-zy-Qf7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,6 +306,6 @@
         <image name="bluehotballoon" width="1278" height="1278"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VnG-hK-0pa"/>
+        <segue reference="v45-iZ-I1H"/>
     </inferredMetricsTieBreakers>
 </document>
