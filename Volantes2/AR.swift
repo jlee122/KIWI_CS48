@@ -11,7 +11,7 @@ import ARKit
 import SceneKit
 import SpriteKit
 import CoreLocation
-//import Mapbox
+import Mapbox
 //import MapboxDirections
 //import Turf
 
@@ -21,8 +21,8 @@ class AR: UIViewController {
     let configuration = ARWorldTrackingConfiguration()
     
     @IBOutlet weak var sceneView: ARSCNView!
-  //  @IBOutlet weak var mapView: MGLMapView!
-
+    //  @IBOutlet weak var mapView: MGLMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         startSession()
@@ -33,8 +33,8 @@ class AR: UIViewController {
         self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         self.sceneView.session.run(configuration) //runs AR
         self.sceneView.autoenablesDefaultLighting = true
-
-
+        
+        
         if automaticallyFindTrueNorth {
             configuration.worldAlignment = .gravityAndHeading
         } else {
@@ -50,9 +50,36 @@ class AR: UIViewController {
     
     @IBAction func addNode(_ sender: Any) {
         
-//        let node =  createSphereNode(radius: 0.1, color: UIColor.red)
-//        let anchor = ARAnchor(name: <#T##String#>, transform: <#T##simd_float4x4#>) //look at demo app
-//        renderer(sceneView, didAdd: node, for: anchor)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        sceneView.addGestureRecognizer(tap)
+    
+    }
+
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer){
+        
+        //1. Get The Current Touch Location
+        let currentTouchLocation = gesture.location(in: self.sceneView)
+        
+        //2. If We Have Hit A Feature Point Get The Result
+        if let hitTest = sceneView.hitTest(currentTouchLocation, types: [.featurePoint]).last { // hit test against the real world
+            
+            //2. Create An Anchore At The World Transform
+            let anchor = ARAnchor(transform: hitTest.worldTransform)
+            
+            //3. Add It To The Scene
+            sceneView.session.add(anchor: anchor)
+            
+            let node = createSphereNode(radius: 0.02, color: UIColor.red)
+            renderer(sceneView, didAdd: node, for: anchor)
+
+        }
+        
+     
+       
+        if let anchorHitTest = sceneView.hitTest(currentTouchLocation, options: nil).first {
+            print(sceneView.anchor(for: anchorHitTest.node)) //should print details if virtual object in the scene
+        }
         
     }
     
@@ -66,20 +93,24 @@ extension AR: ARSCNViewDelegate {
     func createSphereNode(radius: CGFloat, color: UIColor) -> SCNNode {
         let sphere = SCNSphere(radius: radius)
         sphere.firstMaterial?.diffuse.contents = color;
-        
+        sphere.firstMaterial?.specular.contents = UIColor.white
+       
         let sphereNode = SCNNode(geometry: sphere)
         
         return sphereNode
     }
     
-    func addSphereNode(to node: SCNNode, for anchor: ARAnchor) {
-        let sphere = createSphereNode(radius: 0.2, color: UIColor.red)
-        node.addChildNode(sphere)
-    }
     
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        let MBAnchor = anchor
-        addSphereNode(to: node, for: MBAnchor)
+    @objc func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        node.position = SCNVector3(anchor.transform.columns.3.x, anchor.transform.columns.3.y, anchor.transform.columns.3.z)
+        //node position is where the anchor is, which is where tapped on the screen.
+        //next step should be to place anchor certain distance from WO and then get nodes leading to anchor?
+        
+        //node.addChildNode(currentNode!)
+        
+        self.sceneView.scene.rootNode.addChildNode(node)
+            
+        
     }
     
 }
