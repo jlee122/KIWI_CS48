@@ -29,6 +29,27 @@ class InteractiveMap: UIViewController, MGLMapViewDelegate {
         annotation.subtitle = "University of California, Santa Barbara"
         mapView.addAnnotation(annotation)
         
+        // Add a pinpoint of buildings in campus
+        let phelpsHall = MGLPointAnnotation()
+        phelpsHall.coordinate = CLLocationCoordinate2D(latitude: 34.416133, longitude: -119.844661)
+        phelpsHall.title = "Phelps Hall"
+        mapView.addAnnotation(phelpsHall)
+        
+        let campbellHall = MGLPointAnnotation()
+        campbellHall.coordinate = CLLocationCoordinate2D(latitude: 34.416274, longitude: -119.845304)
+        campbellHall.title = "Campbel Hall"
+        mapView.addAnnotation(campbellHall)
+        
+        let library = MGLPointAnnotation()
+        library.coordinate = CLLocationCoordinate2D(latitude: 34.41369, longitude: -119.845562)
+        library.title = "UCSB Library"
+        mapView.addAnnotation(library)
+        
+        let srb = MGLPointAnnotation()
+        srb.coordinate = CLLocationCoordinate2D(latitude: 34.412699, longitude: -119.852686)
+        srb.title = "Student Resource Building"
+        mapView.addAnnotation(srb)
+        
         // Set the map view's delegate
         mapView.delegate = self
         
@@ -42,7 +63,7 @@ class InteractiveMap: UIViewController, MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
-        let camera = MGLMapCamera(lookingAtCenter: annotation.coordinate, acrossDistance: 4500, pitch: 15, heading: 180)
+        let camera = MGLMapCamera(lookingAtCenter: annotation.coordinate, acrossDistance: 4500, pitch: 15, heading: 0)
         mapView.fly(to: camera, withDuration: 4,
                     peakAltitude: 3000, completionHandler: nil)
     }
