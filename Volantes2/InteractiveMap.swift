@@ -7,18 +7,49 @@
 //
 
 import UIKit
+import Mapbox
+import MapboxNavigation
+import MapboxDirections
+import MapboxCoreNavigation
 
-class InteractiveMap: UIViewController {
+class InteractiveMap: UIViewController, MGLMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let mapView = MGLMapView(frame: self.view.bounds)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mapView.setCenter(CLLocationCoordinate2D(latitude: 34.4140, longitude: -119.8489), zoomLevel: 15, animated: false)
+        view.addSubview(mapView)
+        
+        // Add a point annotation
+        let annotation = MGLPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 34.4140, longitude: -119.8489)
+        annotation.title = "UCSB"
+        annotation.subtitle = "University of California, Santa Barbara"
+        mapView.addAnnotation(annotation)
+        
+        // Set the map view's delegate
+        mapView.delegate = self
+        
+        // Allow the map view to display the user's location
+        mapView.showsUserLocation = true
     }
     
-    @IBAction func GoBack(_ sender: UIButton) {
-        performSegue(withIdentifier: "mapback", sender: self)
+    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+        // Always allow callouts to popup when annotations are tapped.
+        return true
     }
+    
+    func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+        let camera = MGLMapCamera(lookingAtCenter: annotation.coordinate, acrossDistance: 4500, pitch: 15, heading: 180)
+        mapView.fly(to: camera, withDuration: 4,
+                    peakAltitude: 3000, completionHandler: nil)
+    }
+    
+//    @IBAction func GoBack(_ sender: UIButton) {
+//        performSegue(withIdentifier: "mapback", sender: self)
+//    }
     
     /*
     // MARK: - Navigation

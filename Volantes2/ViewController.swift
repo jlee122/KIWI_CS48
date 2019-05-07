@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func MapSegue(_ sender: UIButton) {
-        performSegue(withIdentifier: "mapsegue", sender: self)
+        //performSegue(withIdentifier: "mapsegue", sender: self)
     }
     @IBAction func ARSegue(_ sender: UIButton) {
         performSegue(withIdentifier: "arsegue", sender: self)
