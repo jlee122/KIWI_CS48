@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A148C5F956E9A8AE2847A640 /* Pods_NavSBtemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B843CA8FFEE6D8C98EB7E3 /* Pods_NavSBtemplate.framework */; };
 		F976B0AE22705B47005903B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F976B0AD22705B47005903B5 /* AppDelegate.swift */; };
 		F976B0B022705B47005903B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F976B0AF22705B47005903B5 /* ViewController.swift */; };
 		F976B0B322705B47005903B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F976B0B122705B47005903B5 /* Main.storyboard */; };
@@ -16,10 +17,12 @@
 		F976B0C42270C10E005903B5 /* AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F976B0C32270C10E005903B5 /* AR.swift */; };
 		F976B0C62270C126005903B5 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = F976B0C52270C126005903B5 /* Help.swift */; };
 		F976B0C82270C68B005903B5 /* InteractiveMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F976B0C72270C68B005903B5 /* InteractiveMap.swift */; };
-		F976B0CA2270C8F0005903B5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F976B0C92270C8F0005903B5 /* Default-568h@2x.png */; };
+		F99DDE9A228260AF00A00E75 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DDE99228260AF00A00E75 /* Information.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C925A234AF7FA47BBC4D312 /* Pods-NavSBtemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavSBtemplate.release.xcconfig"; path = "Target Support Files/Pods-NavSBtemplate/Pods-NavSBtemplate.release.xcconfig"; sourceTree = "<group>"; };
+		C0B843CA8FFEE6D8C98EB7E3 /* Pods_NavSBtemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NavSBtemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F976B0AA22705B46005903B5 /* NavSBtemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavSBtemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F976B0AD22705B47005903B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F976B0AF22705B47005903B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +34,8 @@
 		F976B0C32270C10E005903B5 /* AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR.swift; sourceTree = "<group>"; };
 		F976B0C52270C126005903B5 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
 		F976B0C72270C68B005903B5 /* InteractiveMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveMap.swift; sourceTree = "<group>"; };
-		F976B0C92270C8F0005903B5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F99DDE99228260AF00A00E75 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		FEAAF1B042037E15E3E003B0 /* Pods-NavSBtemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavSBtemplate.debug.xcconfig"; path = "Target Support Files/Pods-NavSBtemplate/Pods-NavSBtemplate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,18 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A148C5F956E9A8AE2847A640 /* Pods_NavSBtemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19D1881953F42AD4EC21F720 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0B843CA8FFEE6D8C98EB7E3 /* Pods_NavSBtemplate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		511166A28A80276EC4732660 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FEAAF1B042037E15E3E003B0 /* Pods-NavSBtemplate.debug.xcconfig */,
+				7C925A234AF7FA47BBC4D312 /* Pods-NavSBtemplate.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F976B0A122705B46005903B5 = {
 			isa = PBXGroup;
 			children = (
-				F976B0C92270C8F0005903B5 /* Default-568h@2x.png */,
 				F976B0AC22705B46005903B5 /* Volantes2 */,
 				F976B0AB22705B46005903B5 /* Products */,
+				511166A28A80276EC4732660 /* Pods */,
+				19D1881953F42AD4EC21F720 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +98,7 @@
 				F976B0C32270C10E005903B5 /* AR.swift */,
 				F976B0C52270C126005903B5 /* Help.swift */,
 				F976B0C72270C68B005903B5 /* InteractiveMap.swift */,
+				F99DDE99228260AF00A00E75 /* Information.swift */,
 			);
 			path = Volantes2;
 			sourceTree = "<group>";
@@ -86,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F976B0BC22705B48005903B5 /* Build configuration list for PBXNativeTarget "NavSBtemplate" */;
 			buildPhases = (
+				62F2E947E18F0EA2E311852F /* [CP] Check Pods Manifest.lock */,
 				F976B0A622705B46005903B5 /* Sources */,
 				F976B0A722705B46005903B5 /* Frameworks */,
 				F976B0A822705B46005903B5 /* Resources */,
+				EBE73147DDAAC9528271E259 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,7 +164,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F976B0B822705B48005903B5 /* LaunchScreen.storyboard in Resources */,
-				F976B0CA2270C8F0005903B5 /* Default-568h@2x.png in Resources */,
 				F976B0B522705B48005903B5 /* Assets.xcassets in Resources */,
 				F976B0B322705B47005903B5 /* Main.storyboard in Resources */,
 			);
@@ -146,12 +171,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62F2E947E18F0EA2E311852F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NavSBtemplate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBE73147DDAAC9528271E259 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NavSBtemplate/Pods-NavSBtemplate-frameworks.sh",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NavSBtemplate/Pods-NavSBtemplate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F976B0A622705B46005903B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F976B0B022705B47005903B5 /* ViewController.swift in Sources */,
+				F99DDE9A228260AF00A00E75 /* Information.swift in Sources */,
 				F976B0C62270C126005903B5 /* Help.swift in Sources */,
 				F976B0AE22705B47005903B5 /* AppDelegate.swift in Sources */,
 				F976B0C82270C68B005903B5 /* InteractiveMap.swift in Sources */,
@@ -300,6 +377,7 @@
 		};
 		F976B0BD22705B48005903B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEAAF1B042037E15E3E003B0 /* Pods-NavSBtemplate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,7 +387,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ben.NavSBtemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ben.NavSB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,6 +396,7 @@
 		};
 		F976B0BE22705B48005903B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C925A234AF7FA47BBC4D312 /* Pods-NavSBtemplate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,7 +406,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ben.NavSBtemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ben.NavSB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
