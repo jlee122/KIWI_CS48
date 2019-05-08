@@ -207,14 +207,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Augmented Reality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b06-8c-fcM">
-                                <rect key="frame" x="85" y="430" width="244" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k11-gh-xTb">
-                                <rect key="frame" x="152.5" y="486" width="109" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k11-gh-xTb">
+                                <rect key="frame" x="153" y="814" width="109" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Go Back"/>
                                 <connections>
@@ -225,9 +219,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="b06-8c-fcM" firstAttribute="centerY" secondItem="9Qs-dN-jTC" secondAttribute="centerY" id="7hY-mp-1sT"/>
-                            <constraint firstItem="b06-8c-fcM" firstAttribute="centerX" secondItem="9Qs-dN-jTC" secondAttribute="centerX" id="A9d-VH-I6W"/>
-                            <constraint firstItem="k11-gh-xTb" firstAttribute="top" secondItem="b06-8c-fcM" secondAttribute="bottom" constant="20" id="czS-0E-Np4"/>
                             <constraint firstItem="k11-gh-xTb" firstAttribute="centerX" secondItem="9Qs-dN-jTC" secondAttribute="centerX" id="wBc-7N-cFQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uQc-Xn-PNh"/>
@@ -254,8 +245,8 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="mapback" id="VnG-hK-0pa"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mfd-te-LNz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mfd-te-LNz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="760"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoY-42-UF7">
                                 <rect key="frame" x="171" y="57" width="74" height="36"/>
@@ -266,18 +257,43 @@
                                     <action selector="goBack:" destination="GD8-JA-jGl" eventType="touchUpInside" id="9hC-Qo-n3a"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zm-ei-bgp">
+                                <rect key="frame" x="332" y="727" width="46" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="GO">
+                                    <color key="titleColor" red="0.24322083589999999" green="0.22700428959999999" blue="0.25098347659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="goButtonTapped:" destination="GD8-JA-jGl" eventType="touchUpInside" id="ccA-Bt-6Vu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66o-hN-7cG">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NOt-b0-VZw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GWF-UF-HIS" firstAttribute="trailing" secondItem="Mfd-te-LNz" secondAttribute="trailing" id="Daa-L2-VCP"/>
                             <constraint firstItem="Mfd-te-LNz" firstAttribute="leading" secondItem="GWF-UF-HIS" secondAttribute="leading" id="KF8-od-Mhc"/>
+                            <constraint firstItem="66o-hN-7cG" firstAttribute="leading" secondItem="GWF-UF-HIS" secondAttribute="leading" id="L1H-yZ-6gL"/>
                             <constraint firstItem="461-Dh-NBE" firstAttribute="centerX" secondItem="iwC-zy-Qf7" secondAttribute="centerX" id="LGQ-ha-gfv"/>
+                            <constraint firstItem="GWF-UF-HIS" firstAttribute="trailing" secondItem="66o-hN-7cG" secondAttribute="trailing" id="OmB-dv-Jga"/>
                             <constraint firstItem="Mfd-te-LNz" firstAttribute="top" secondItem="GWF-UF-HIS" secondAttribute="top" id="P8E-xv-0WK"/>
-                            <constraint firstItem="GWF-UF-HIS" firstAttribute="bottom" secondItem="Mfd-te-LNz" secondAttribute="bottom" id="aHx-3x-DmL"/>
+                            <constraint firstItem="GWF-UF-HIS" firstAttribute="bottom" secondItem="66o-hN-7cG" secondAttribute="bottom" id="qUL-qA-uMJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GWF-UF-HIS"/>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="66o-hN-7cG" id="m68-g3-kqd"/>
+                        <outlet property="goButton" destination="6zm-ei-bgp" id="gxY-DE-KnB"/>
                         <outlet property="mapView" destination="Mfd-te-LNz" id="qVl-bu-Siw"/>
                     </connections>
                 </viewController>
@@ -290,6 +306,6 @@
         <image name="bluehotballoon" width="1278" height="1278"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VnG-hK-0pa"/>
+        <segue reference="v45-iZ-I1H"/>
     </inferredMetricsTieBreakers>
 </document>
