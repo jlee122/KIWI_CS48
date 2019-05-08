@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
@@ -15,6 +17,41 @@ class ViewController: UIViewController {
     @IBOutlet weak var Help: UIButton!
     @IBOutlet weak var About: UIButton!
     @IBOutlet weak var NavSB: UILabel!
+    
+    //CHECK LOACTION SERVICES
+    let locationManager = CLLocationManager()
+    
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            // Show alert letting the user know they have to turn this on.
+        }
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            //startTackingUserLocation()
+            break
+        case .denied:
+            // Show alert instructing them how to turn on permissions
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            // Show an alert letting them know what's up
+            break
+        case .authorizedAlways:
+            break
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +71,7 @@ class ViewController: UIViewController {
         NavSB.clipsToBounds = true
         NavSB.layer.borderWidth = 2
         // Do any additional setup after loading the view, typically from a nib.
+        checkLocationServices()
     }
     
     @IBAction func MapSegue(_ sender: UIButton) {
@@ -49,5 +87,13 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "aboutsegue", sender: self)
     }
     
+}
+
+
+extension ViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
+    }
 }
 
