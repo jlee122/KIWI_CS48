@@ -35,19 +35,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-<<<<<<< HEAD
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array>
 		<string>MKDirectionsModeCar</string>
 	</array>
-=======
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoibmFnZXBseiIsImEiOiJjanZkYmc5cmkwam8wM3lvZGFpM2dtczByIn0.siG6v2vpTlDgnxE5Fnr3Sg</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Enable Location to show yourself on our map</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Enable Location to show yourself on our map</string>
->>>>>>> e036a408ea41137afa5eac68deb7613f9850ffc3
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

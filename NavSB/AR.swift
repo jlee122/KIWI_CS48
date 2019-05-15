@@ -59,9 +59,6 @@ class AR: UIViewController {
         return LocationAnnotationNode(location: location, image: image)
     }
     
-    
-    
-    
     @IBAction func GoBack(_ sender: UIButton) {
         performSegue(withIdentifier: "arback", sender: self)
     }
